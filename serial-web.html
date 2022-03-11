@@ -14,9 +14,47 @@
 </head>
 <body class="user-select-none">
   <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-    <div class="card p-4">
-      <button id="requestPortsButton" class="btn btn-primary">Select port</button>
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title d-flex justify-content-center">Port configuration</h4>
+      </div>
+      <div class="card-body">
+       
+        <label for="inputSerialSpeed" class="form-label">Baud rate</label>
+        <div class="input-group mb-3">
+          <input id="inputSerialSpeed" type="text" class="form-control" aria-label="Text input with dropdown button" value="115200">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Basics</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <div class="overflow-auto" style="height: 200px;">
+              <li><a class="dropdown-item">1200</a></li>
+              <li><a class="dropdown-item">2400</a></li>
+              <li><a class="dropdown-item">4800</a></li>
+              <li><a class="dropdown-item"><b>9600</b></a></li>
+              <li><a class="dropdown-item">19200</a></li>
+              <li><a class="dropdown-item">38400</a></li>
+              <li><a class="dropdown-item">57600</a></li>
+              <li><a class="dropdown-item">74880</a></li>
+              <li><a class="dropdown-item"><b>115200</b></a></li>
+              <li><a class="dropdown-item">230400</a></li>
+              <li><a class="dropdown-item">250000</a></li>
+              <li><a class="dropdown-item">500000</a></li>
+              <li><a class="dropdown-item"><b>1000000</b></a></li>
+              <li><a class="dropdown-item">2000000</a></li>
+            </div>
+          </ul>
+        </div>
+
+        <label for="inputSerialDataBits" class="form-label">Data bits</label>
+        <select id="inputSerialDataBits" class="form-select" aria-label="Default select example">
+          <option value="7">7</option>
+          <option selected value="8">8</option>
+        </select>
+          
+
+        <button id="requestPortsButton" class="btn btn-primary mt-3">Select port</button>
+      </div>
     </div>
+
   </div>
 </body>
 </html>
