@@ -9,12 +9,23 @@ $(document).ready(function() {
 
   $("#requestPortsButton").click(async function() {
     const port = await navigator.serial.requestPort()
+    await port.open({
+      baudRate: 115200,
+      bufferSize: 1024,
+      dataBits: 8,
+      flowControl: "none",
+      parity: "none",
+      stopBits: 1
+    });
 
-    await port.open({baudRate: 115200});
     console.log("[ OK ] Port opened");
     console.log("-----------------------");
     console.log("");
 
+    processingPort(port);
+  });
+
+  async function processingPort(port) {
     const decoder = new TextDecoder()
     const reader = port.readable.getReader();
 
@@ -48,5 +59,5 @@ $(document).ready(function() {
         }
       }
     }
-  });
+  }
 });
