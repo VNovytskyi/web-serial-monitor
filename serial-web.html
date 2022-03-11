@@ -23,7 +23,9 @@
       navigator.serial.requestPort()
         .then(async (port) => {
           await port.open({baudRate: 115200});
-          console.log("Port opened");
+          console.log("[ OK ] Port opened");
+          console.log("-----------------------");
+          console.log("");
 
           var outputStr = ""
           const decoder = new TextDecoder()
