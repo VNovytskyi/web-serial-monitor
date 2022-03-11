@@ -5,13 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test serial</title>
-  <script>
-    if ("serial" in navigator) {
-      console.log("[ OK ] The Web Serial API is supported!")
-    } else {
-      console.log("[ ERROR ] The Web Serial API is not supported!")
-    }
-  </script>
 </head>
 <body>
   <button id="requestPortsButton">Request ports</button>
@@ -19,6 +12,14 @@
 </html>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    if ("serial" in navigator) {
+      console.log("[ OK ] The Web Serial API is supported!");
+    } else {
+      console.log("[ ERROR ] The Web Serial API is not supported!");
+      console.log("[ ERROR ] Can't execute the current program!");
+      return;
+    }
+
     document.getElementById("requestPortsButton").addEventListener("click", async function() {
       navigator.serial.requestPort()
         .then(async (port) => {
