@@ -60,4 +60,9 @@ $(document).ready(function() {
       }
     }
   }
+
+  $("#serialSpeedValues").on('click', 'li', (e) => { 
+    $("#inputSerialSpeed").val(e.target.innerText); 
+  });
+
 });
