@@ -50,7 +50,29 @@
           <option value="7">7</option>
           <option selected value="8">8</option>
         </select>
-          
+
+        <div class="form-check mt-3">
+          <input id="flowControlUse" class="form-check-input" type="checkbox">
+          <label class="form-check-label" for="flowControlUse">
+            Hardware flow control
+          </label>
+        </div>
+
+        <label class="form-check-label mt-2" for="">Parity</label>
+        <div class="ms-2">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="parityOption" id="noneParity" value="none" checked>
+            <label class="form-check-label" for="noneParity">none</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="parityOption" id="oddParity" value="odd">
+            <label class="form-check-label" for="oddParity">odd</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="parityOption" id="evenParity" value="even">
+            <label class="form-check-label" for="evenParity">even</label>
+          </div>
+        </div>
 
         <button id="requestPortsButton" class="btn btn-primary mt-3">Select port</button>
       </div>

@@ -8,12 +8,25 @@ $(document).ready(function() {
   }
 
   $("#requestPortsButton").click(async function() {
-    const port = await navigator.serial.requestPort()
-    await port.open({
-      baudRate: 115200,
+    //const port = await navigator.serial.requestPort();
+
+    const baudRateValue = $("#inputSerialSpeed").val();
+    console.log(baudRateValue);
+
+    const dataBitsValue = $("#inputSerialDataBits").find(":selected").text();
+    console.log(dataBitsValue);
+
+    const flowControlValue = $("#flowControlUse").is(':checked') ? "hardware" : "none";
+    console.log(flowControlValue);
+
+    const parityValue = $("input[name='parityOption']:checked")[0].value;
+    console.log(parityValue);
+
+    /*await port.open({
+      baudRate: baudRateValue,
       bufferSize: 1024,
-      dataBits: 8,
-      flowControl: "none",
+      dataBits: dataBitsValue,
+      flowControl: flowControlValue,
       parity: "none",
       stopBits: 1
     });
@@ -22,7 +35,7 @@ $(document).ready(function() {
     console.log("-----------------------");
     console.log("");
 
-    processingPort(port);
+    processingPort(port);*/
   });
 
   async function processingPort(port) {
