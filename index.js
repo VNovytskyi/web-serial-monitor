@@ -22,13 +22,16 @@ $(document).ready(function() {
     const parityValue = $("input[name='parityOption']:checked")[0].value;
     console.log(parityValue);
 
+    const stopBitsValue = parseInt($("input[name='stopBitsOption']:checked")[0].value);
+    console.log(stopBitsValue);
+
     /*await port.open({
       baudRate: baudRateValue,
       bufferSize: 1024,
       dataBits: dataBitsValue,
       flowControl: flowControlValue,
-      parity: "none",
-      stopBits: 1
+      parity: parityValue,
+      stopBits: stopBitsValue
     });
 
     console.log("[ OK ] Port opened");
