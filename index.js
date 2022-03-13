@@ -25,6 +25,9 @@ $(document).ready(function() {
     const stopBitsValue = parseInt($("input[name='stopBitsOption']:checked")[0].value);
     console.log(stopBitsValue);
 
+    const bufferSize = $("#inputBufferSize").find(":selected").text();
+    console.log(bufferSize);
+
     /*await port.open({
       baudRate: baudRateValue,
       bufferSize: 1024,

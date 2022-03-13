@@ -86,7 +86,17 @@
           </div>
         </div>
 
-        <button id="requestPortsButton" class="btn btn-primary mt-3">Select port</button>
+        <label class="form-check-label mt-2" for="inputBufferSize">Buffer size</label>
+        <select id="inputBufferSize" class="form-select" aria-label="Default select example">
+          <option selected>256</option>
+          <option>512</option>
+          <option>1024</option>
+          <option>2048</option>
+          <option>4096</option>
+          <option>8192</option>
+        </select>
+
+        <button id="requestPortsButton" class="btn btn-primary mt-3 w-100">Select port</button>
       </div>
     </div>
 
