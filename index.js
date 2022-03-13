@@ -2,6 +2,7 @@ $(document).ready(function() {
   if ("serial" in navigator) {
     console.log("[ OK ] The Web Serial API is supported!");
   } else {
+    //TODO: print error for user
     console.log("[ ERROR ] The Web Serial API is not supported!");
     console.log("[ ERROR ] Can't execute the current program!");
     return;
@@ -29,6 +30,8 @@ $(document).ready(function() {
     console.log("[ OK ] Port opened");
     console.log("-----------------------");
     console.log("");
+
+    //TODO: Open monitor window
 
     processingPort(port);
   });
